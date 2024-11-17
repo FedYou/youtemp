@@ -3,21 +3,25 @@ const jconsole = require("@jumpcutking/console");
 const cachePath = require("./utils/cachePath");
 const id = require("./utils/id");
 
+function onExit(path) {
+  youfile.removeExists(path);
+  process.exit(0);
+}
 module.exports = class YouTemp {
   #name = "";
   /**
-   * Cache name.
+   * Temporary name.
    * @param {string} name - Directory path.
    */
   constructor(name) {
     if (name && typeof name === "string") {
-      this.#name = name;
+      this.#name = `${name}-`;
     }
     this.path = cachePath(`${this.#name}temp-${id()}`);
     youfile.write.dir(this.path);
-    process.on("exit", () => youfile.removeExists(this.path));
-    jconsole.on("error", () => process.exit(0));
-    process.on("SIGINT", () => process.exit(0));
+    process.on("exit", () => onExit(this.path));
+    jconsole.on("error", () => onExit(this.path));
+    process.on("SIGINT", () => onExit(this.path));
   }
   /**
    * Clean the temporary folder
