@@ -1,0 +1,9 @@
+{
+  "name": "youtemp",
+  "version": "0.0.1",
+  "description": "Create temporary folders in your system cache",
+  "main": "index.js",
+  "keywords": [],
+  "author": "FedYou",
+  "license": "MIT"
+}
