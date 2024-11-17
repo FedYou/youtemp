@@ -5,5 +5,9 @@
   "main": "index.js",
   "keywords": [],
   "author": "FedYou",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@jumpcutking/console": "^1.7.0",
+    "youfile": "^1.0.9"
+  }
 }
