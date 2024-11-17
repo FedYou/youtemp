@@ -4,8 +4,16 @@ const cachePath = require("./utils/cachePath");
 const id = require("./utils/id");
 
 module.exports = class YouTemp {
-  constructor() {
-    this.path = cachePath(`temp-${id()}`);
+  #name = "";
+  /**
+   * Cache name.
+   * @param {string} name - Directory path.
+   */
+  constructor(name) {
+    if (name && typeof name === "string") {
+      this.#name = name;
+    }
+    this.path = cachePath(`${this.#name}temp-${id()}`);
     youfile.write.dir(this.path);
     process.on("exit", () => youfile.removeExists(this.path));
     jconsole.on("error", () => process.exit(0));
