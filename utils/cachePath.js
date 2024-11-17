@@ -14,7 +14,7 @@ function windows(name) {
   return join(localAppData, name, "Cache");
 }
 function linux(name) {
-  join(env.XDG_CACHE_HOME || join(homedir, ".cache"), name);
+  return join(env.XDG_CACHE_HOME || join(homedir, ".cache"), name);
 }
 
 module.exports = (name) => {
