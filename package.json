@@ -3,9 +3,18 @@
   "version": "0.0.1",
   "description": "Create temporary folders in your system cache",
   "main": "index.js",
-  "keywords": [],
   "author": "FedYou",
   "license": "MIT",
+  "homepage": "https://github.com/FedYou/youtemp",
+  "keywords": [
+    "temp",
+    "temporary",
+    "cache",
+    "folder",
+    "system",
+    "youfile",
+    "youtemp"
+  ],
   "dependencies": {
     "@jumpcutking/console": "^1.7.0",
     "youfile": "^1.0.9"
