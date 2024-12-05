@@ -1,6 +1,6 @@
 {
   "name": "youtemp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create temporary folders in your system cache",
   "main": "index.js",
   "types": "index.d.ts",
