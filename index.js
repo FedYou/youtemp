@@ -4,7 +4,7 @@ const cachePath = require("./utils/cachePath");
 const id = require("./utils/id");
 
 function onExit(path) {
-  youfile.removeExists(path);
+  youfile.removeExistsSync(path);
   process.exit(0);
 }
 module.exports = class YouTemp {
@@ -18,7 +18,7 @@ module.exports = class YouTemp {
       this.#name = `${name}-`;
     }
     this.path = cachePath(`${this.#name}temp-${id()}`);
-    youfile.write.dir(this.path);
+    youfile.write.dirSync(this.path);
     process.on("exit", () => onExit(this.path));
     jconsole.on("error", () => onExit(this.path));
     process.on("SIGINT", () => onExit(this.path));
@@ -27,7 +27,7 @@ module.exports = class YouTemp {
    * Clean the temporary folder
    */
   clear() {
-    youfile.removeExists(this.path);
-    youfile.write.dir(this.path);
+    youfile.removeExistsSync(this.path);
+    youfile.write.dirSync(this.path);
   }
 };
