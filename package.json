@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Create temporary folders in your system cache",
   "main": "index.js",
+  "types": "index.d.ts",
   "author": "FedYou",
   "license": "MIT",
   "homepage": "https://github.com/FedYou/youtemp",
